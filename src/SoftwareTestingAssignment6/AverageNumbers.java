@@ -78,7 +78,7 @@ public class AverageNumbers {
 			for (int num : list) {
 				if (num != (int)num) {
 					validList = false;
-					System.out.println("Array must contain only integers.")
+					System.out.println("Array must contain only integers.");
 				}
 			}
 			if (validList) {
