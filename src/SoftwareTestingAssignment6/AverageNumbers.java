@@ -21,16 +21,13 @@ public class AverageNumbers {
 	/**
 	 * This is the private method that accepts an integer as a parameter
 	 * and adds that integer to the object's totalOfVales. This
-	 * method also adds 1 to the number of values each time it is called
-	 * and calls the setAverage() function to keep the average constantly
-	 * updated.
+	 * method also adds 1 to the number of values each time it is called.
 	 * @param num
 	 */
 	private void addTotal(int num) {
 		try {
 			totalOfValues += num;
-			numberOfValues += 1;
-			setAverage();
+			numberOfValues += 1;			
 		}
 		catch(Exception e) {
 			System.out.println("Data must be an integer.  Error: " + e);
@@ -70,19 +67,31 @@ public class AverageNumbers {
 	 * if the integers meet the criteria of being a positive number.
 	 * Note that 0 is neither positive nor negative therefore cannot
 	 * be considered a positive number.  This method catches non integers
-	 * and generates a console message to the user.
+	 * and generates a console message to the user.  Once the array of
+	 * integers has been processed the setAverage method is called
+	 * to update the average.
 	 * @param int[] list
 	 */
 	public void processList(int [] list) {
 		try {
+			boolean validList = true;
 			for (int num : list) {
-				if (num > 0) {
-					addTotal(num);
-				}
-				else {
-					System.out.println("Only positive integers (integers greater than 0) will be averaged.  Invalid number: " + num);
+				if (num != (int)num) {
+					validList = false;
+					System.out.println("Array must contain only integers.")
 				}
 			}
+			if (validList) {
+				for (int num : list) {
+					if (num > 0) {
+						addTotal(num);
+					}
+					else {
+						System.out.println("Only positive integers (integers greater than 0) will be averaged.  Invalid number: " + num);
+					}
+				}
+				setAverage();
+			}			
 		}
 		catch(Exception e) {
 			System.out.println("Array must contain only integers.  Error: " + e);
