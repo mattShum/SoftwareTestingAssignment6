@@ -2,11 +2,13 @@
  * This class contains all states' tests
  * */
 
+package SoftwareTestingAssignment6;
+
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
-class Q5AllStatesTests {
+public class Q5AllStatesTests {
 
     // Test Case: All States - Positive Numbers
     @Test
