@@ -1,10 +1,14 @@
+package SoftwareTestingAssignment6;
+/**
+ * Contains all state tests
+ */
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Q5AllStatesTests {
 
-    // Test Case 1: All States - Positive Numbers
+    // Test Case: All States - Positive Numbers
     @Test
     void testAllStatesPositiveNumbers() {
         // Creating an instance of AverageNumbers class to perform operations.
@@ -20,7 +24,7 @@ public class Q5AllStatesTests {
         assertEquals(10, processor.getAverage(), "TC01 - Average should be 10");
     }
 
-    // Test Case 2: All States - Mixed Numbers
+    // Test Case: All States - Mixed Numbers
     @Test
     void testAllStatesMixedNumbers() {
         // Creating an instance of AverageNumbers class to perform operations.
@@ -34,37 +38,5 @@ public class Q5AllStatesTests {
 
         // Asserting that the average of the positive integers in the list is correctly calculated.
         assertEquals(10, processor.getAverage(), "TC02 - Average should be 10");
-    }
-
-    // Test Case 3: All Transitions - Positive to Negative Transition
-    @Test
-    void testPositiveToNegativeTransition() {
-        // Creating an instance of AverageNumbers class to perform operations.
-        AverageNumbers processor = new AverageNumbers();
-
-        // Processing a list containing a positive integer followed by a negative integer.
-        processor.processList(new int[]{5, -10});
-
-        // Asserting that the total is correctly calculated as the sum of positive integers in the list.
-        assertEquals(5, processor.getTotal(), "TC03 - Total should be 5");
-
-        // Asserting that the average is correctly calculated as the average of positive integers in the list.
-        assertEquals(5, processor.getAverage(), "TC03 - Average should be 5");
-    }
-
-    // Test Case 4: All Transitions - Negative to End State Transition
-    @Test
-    void testNegativeToEndStateTransition() {
-        // Creating an instance of AverageNumbers class to perform operations.
-        AverageNumbers processor = new AverageNumbers();
-
-        // Processing a list containing only a single negative integer.
-        processor.processList(new int[]{-5});
-
-        // Asserting that the total is 0 as there are no positive integers in the list.
-        assertEquals(0, processor.getTotal(), "TC04 - Total should be 0");
-
-        // Asserting that the average is 0 as there are no positive integers in the list to calculate the average.
-        assertEquals(0, processor.getAverage(), "TC04 - Average should be 0");
     }
 }
