@@ -82,15 +82,19 @@ public class AverageNumbers {
 				}
 			}
 			if (validList) {
+				boolean numberAdded = false;
 				for (int num : list) {
 					if (num > 0) {
 						addTotal(num);
+						numberAdded = true;
 					}
 					else {
 						System.out.println("Only positive integers (integers greater than 0) will be averaged.  Invalid number: " + num);
 					}
 				}
-				setAverage();
+				if(numberAdded) {
+					setAverage();
+				}				
 			}			
 		}
 		catch(Exception e) {
