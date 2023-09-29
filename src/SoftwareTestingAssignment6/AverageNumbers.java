@@ -85,8 +85,15 @@ public class AverageNumbers {
 				boolean numberAdded = false;
 				for (int num : list) {
 					if (num > 0) {
-						addTotal(num);
-						numberAdded = true;
+						if((Long.valueOf(num) + Long.valueOf(getTotal())) < 2147483647) {
+							addTotal(num);
+							numberAdded = true;
+						}
+						else {
+							System.out.println("Total cannot be greater than 2,147,483,647");
+							break;
+						}
+						
 					}
 					else {
 						System.out.println("Only positive integers (integers greater than 0) will be averaged.  Invalid number: " + num);
