@@ -22,12 +22,17 @@ public class AverageNumbers {
 	 * This is the private method that accepts an integer as a parameter
 	 * and adds that integer to the object's totalOfVales. This
 	 * method also adds 1 to the number of values each time it is called.
-	 * @param num
+	 * @param int num
 	 */
 	private void addTotal(int num) {
 		try {
-			totalOfValues += num;
-			numberOfValues += 1;			
+			if((Long.valueOf(num) + Long.valueOf(totalOfValues)) < 2147483647) {
+				totalOfValues += num;
+				numberOfValues += 1;
+			} else {
+				System.out.println("Total cannot be greater than 2,147,483,647");
+		
+			}
 		}
 		catch(Exception e) {
 			System.out.println("Data must be an integer.  Error: " + e);
@@ -57,7 +62,13 @@ public class AverageNumbers {
 	 * dividing the totalOfVales by the number of values.
 	 */
 	private void setAverage() {
+		boolean returnToZero = false;
+		if(numberOfValues == 0) {
+			numberOfValues = 1;
+			returnToZero = true;
+		}
 		averageOfValues = (totalOfValues / numberOfValues);
+		if (returnToZero) numberOfValues = 0;
 	}
 	
 	
@@ -84,16 +95,9 @@ public class AverageNumbers {
 			if (validList) {
 				boolean numberAdded = false;
 				for (int num : list) {
-					if (num > 0) {
-						if((Long.valueOf(num) + Long.valueOf(getTotal())) < 2147483647) {
-							addTotal(num);
-							numberAdded = true;
-						}
-						else {
-							System.out.println("Total cannot be greater than 2,147,483,647");
-							break;
-						}
-						
+					if (num > 0) {						
+						addTotal(num);
+						numberAdded = true;						
 					}
 					else {
 						System.out.println("Only positive integers (integers greater than 0) will be averaged.  Invalid number: " + num);

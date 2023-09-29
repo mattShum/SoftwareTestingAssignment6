@@ -5,7 +5,7 @@ public class main {
 	public static void main(String[] args) {
 
 		AverageNumbers averageTracker = new AverageNumbers();
-		int[] integersSet = new int[]{2147483646, 7, 4, -12, -15};
+		int[] integersSet = new int[]{2147483635, 70, 1, 80, 5};
 		
 		averageTracker.processList(integersSet);
 		
