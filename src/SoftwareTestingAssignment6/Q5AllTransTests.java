@@ -48,18 +48,25 @@ public class Q5AllTransTests {
      *  values to total even if a previous number was too large to add to total
      */
     void testMaxIntAlternatingValues() {
+    	System.out.println("Test Case ID: A6-MS-AT02");
     	AverageNumbers maxIntTest = new AverageNumbers();
     	int[] integersSet1 = new int[]{2147483635};
     	int[] integersSet2 = new int[]{70, 1};
     	int[] integersSet3 = new int[]{80, 5};
     	
     	maxIntTest.processList(integersSet1);
+    	System.out.println("The total is: " + maxIntTest.getTotal());
+    	System.out.println("The average is: " + maxIntTest.getTotal());
     	assertEquals(2147483635, maxIntTest.getTotal(), "A6-MS-AT02 - Total should be 2147483635");
     	
     	maxIntTest.processList(integersSet2);
+    	System.out.println("The total is: " + maxIntTest.getTotal());
+    	System.out.println("The average is: " + maxIntTest.getTotal());
     	assertEquals(2147483636, maxIntTest.getTotal(), "A6-MS-AT02 - Total should be 2147483636");
     	
     	maxIntTest.processList(integersSet3);
+    	System.out.println("The total is: " + maxIntTest.getTotal());
+    	System.out.println("The average is: " + maxIntTest.getTotal());
     	assertEquals(2147483641, maxIntTest.getTotal(), "A6-MS-AT02 - Total should be 2147483641");
     }
     
@@ -73,6 +80,7 @@ public class Q5AllTransTests {
      * back to happy path scenarios still produces the expected results. 
      */
     void testDivideByZeroTransition() {
+    	System.out.println("Test Case ID: A6-MS-GA01");
     	AverageNumbers divideByZeroTransitionTest = new AverageNumbers();
     	int[] integersSet1 = new int[]{-8, 0, -75};
     	int[] integersSet2 = new int[]{0, 0, 0};
@@ -80,15 +88,23 @@ public class Q5AllTransTests {
     	int[] integersSet4 = new int[]{-3, -5, -6};
     	
     	divideByZeroTransitionTest.processList(integersSet1);
+    	System.out.println("The total is: " + divideByZeroTransitionTest.getTotal());
+    	System.out.println("The average is: " + divideByZeroTransitionTest.getTotal());
     	assertEquals(0.0, divideByZeroTransitionTest.getAverage(), "A6-MS-GA01 - Average should be 0");
     	
     	divideByZeroTransitionTest.processList(integersSet2);
+    	System.out.println("The total is: " + divideByZeroTransitionTest.getTotal());
+    	System.out.println("The average is: " + divideByZeroTransitionTest.getTotal());
     	assertEquals(0.0, divideByZeroTransitionTest.getAverage(), "A6-MS-GA01 - Average should be 0");
     	
     	divideByZeroTransitionTest.processList(integersSet3);
+    	System.out.println("The total is: " + divideByZeroTransitionTest.getTotal());
+    	System.out.println("The average is: " + divideByZeroTransitionTest.getTotal());
     	assertEquals(2.0, divideByZeroTransitionTest.getAverage(), "A6-MS-GA01 - Average should be 2.0");
     	
     	divideByZeroTransitionTest.processList(integersSet4);
+    	System.out.println("The total is: " + divideByZeroTransitionTest.getTotal());
+    	System.out.println("The average is: " + divideByZeroTransitionTest.getTotal());
     	assertEquals(2.0, divideByZeroTransitionTest.getAverage(), "A6-MS-GA01 - Average should be 2.0");    	
     }
 }

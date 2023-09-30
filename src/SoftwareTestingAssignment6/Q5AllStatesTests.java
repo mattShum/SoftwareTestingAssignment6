@@ -48,11 +48,13 @@ public class Q5AllStatesTests {
      * of int (max int size = 2,147,483,647) 
      */
     void testMaxIntForAddTotal() {
+    	System.out.println("Test Case ID: A6-MS-AT01");
     	AverageNumbers maxIntTest = new AverageNumbers();
     	int[] integersSet = new int[]{2147483646, 7, 4};
     	
     	maxIntTest.processList(integersSet);
-    	System.out.println("Total is: " + maxIntTest.getTotal());
+    	System.out.println("The total is: " + maxIntTest.getTotal());
+    	System.out.println("The average is: " + maxIntTest.getTotal());
     	
     	assertEquals(2147483646, maxIntTest.getTotal(), "A6-MS-AT01 - Total should be 2147483646");
     }
@@ -63,10 +65,13 @@ public class Q5AllStatesTests {
      * Validate setAverage() can catch and handle divide by 0 scenarios
      */
     void testDivideByZero() {
+    	System.out.println("Test Case ID: A6-MS-SA01");
     	AverageNumbers divideByZeroTest = new AverageNumbers();
     	int[] integersSet = new int[]{0, 0, 0};
     	
     	divideByZeroTest.processList(integersSet);
+    	System.out.println("The total is: " + divideByZeroTest.getTotal());
+    	System.out.println("The average is: " + divideByZeroTest.getTotal());
     	    	
     	assertEquals(0.0, divideByZeroTest.getAverage(), "A6-MS-SA01 - Average should be 0.0");    	
     }    
