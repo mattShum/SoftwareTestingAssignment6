@@ -23,7 +23,6 @@ class TestClass {
 
 	@Test
 	void testProcessList() {
-		AverageNumbers case1 = new AverageNumbers();
 		fail("Not yet implemented");
 	}
 

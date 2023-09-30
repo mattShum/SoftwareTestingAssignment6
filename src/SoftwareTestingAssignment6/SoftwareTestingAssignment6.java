@@ -1,6 +1,6 @@
 package SoftwareTestingAssignment6;
 
-public class main {
+public class SoftwareTestingAssignment6 {
 
 	public static void main(String[] args) {
 

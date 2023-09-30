@@ -1,4 +1,5 @@
 package SoftwareTestingAssignment6;
+
 /**
  * Contains all state tests
  */
@@ -39,4 +40,34 @@ public class Q5AllStatesTests {
         // Asserting that the average of the positive integers in the list is correctly calculated.
         assertEquals(10, processor.getAverage(), "TC02 - Average should be 10");
     }
+    
+    @Test
+    /*
+     * Test Case ID: A6-MS-AT01
+     * Validate addTotal() can catch and handle values that exceed the limits 
+     * of int (max int size = 2,147,483,647) 
+     */
+    void testMaxIntForAddTotal() {
+    	AverageNumbers maxIntTest = new AverageNumbers();
+    	int[] integersSet = new int[]{2147483646, 7, 4};
+    	
+    	maxIntTest.processList(integersSet);
+    	System.out.println("Total is: " + maxIntTest.getTotal());
+    	
+    	assertEquals(2147483646, maxIntTest.getTotal(), "A6-MS-AT01 - Total should be 2147483646");
+    }
+    
+    @Test
+    /*
+     * Test Case ID: A6-MS-SA01
+     * Validate setAverage() can catch and handle divide by 0 scenarios
+     */
+    void testDivideByZero() {
+    	AverageNumbers divideByZeroTest = new AverageNumbers();
+    	int[] integersSet = new int[]{0, 0, 0};
+    	
+    	divideByZeroTest.processList(integersSet);
+    	    	
+    	assertEquals(0.0, divideByZeroTest.getAverage(), "A6-MS-SA01 - Average should be 0.0");    	
+    }    
 }
