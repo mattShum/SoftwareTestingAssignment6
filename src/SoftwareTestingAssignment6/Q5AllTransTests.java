@@ -8,8 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Q5AllTransTests {
 
-    // Test Case: All Transitions - Positive to Negative Transition
     @Test
+    /**
+     * Test Case ID: A6-EBG-TC03
+     * Purpose: To verify that the system correctly transitions from processing a positive number to a negative number.
+     */
     void testPositiveToNegativeTransition() {
         // Creating an instance of AverageNumbers class to perform operations.
         AverageNumbers processor = new AverageNumbers();
@@ -24,8 +27,11 @@ public class Q5AllTransTests {
         assertEquals(5, processor.getAverage(), "TC03 - Average should be 5");
     }
 
-    // Test Case: All Transitions - Negative to End State Transition
     @Test
+    /**
+     * Test Case ID: A6-EBG-TC04
+     * Purpose: To verify that the system correctly transitions from processing a negative number to the end state when there are no more numbers to process.
+     */
     void testNegativeToEndStateTransition() {
         // Creating an instance of AverageNumbers class to perform operations.
         AverageNumbers processor = new AverageNumbers();

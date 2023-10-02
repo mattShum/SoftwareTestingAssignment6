@@ -8,8 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Q5AllStatesTests {
 
-    // Test Case: All States - Positive Numbers
     @Test
+    /**
+     * Test Case ID: A6-EBG-TC01
+     * Purpose: To verify that the system correctly processes a list containing only positive integers, transitioning through all states.
+     */
     void testAllStatesPositiveNumbers() {
         // Creating an instance of AverageNumbers class to perform operations.
         AverageNumbers processor = new AverageNumbers();
@@ -24,8 +27,11 @@ public class Q5AllStatesTests {
         assertEquals(10, processor.getAverage(), "TC01 - Average should be 10");
     }
 
-    // Test Case: All States - Mixed Numbers
     @Test
+    /**
+     * Test Case ID: A6-EBG-TC02
+     * Purpose: To verify that the system correctly processes a list containing both positive and negative integers, transitioning through all states.
+     */
     void testAllStatesMixedNumbers() {
         // Creating an instance of AverageNumbers class to perform operations.
         AverageNumbers processor = new AverageNumbers();
