@@ -113,4 +113,62 @@ public class Q5AllTransTests {
     	System.out.println("The average is: " + divideByZeroTransitionTest.getTotal());
     	assertEquals(2.0, divideByZeroTransitionTest.getAverage(), "A6-MS-GA01 - Average should be 2.0");    	
     }
+
+    @Test 
+
+/* 
+
+* Test Case ID: A6-MP-TT01 
+
+* To verify if addTotal() does not add floats to list 
+
+*/ 
+
+void testNeg() { 
+
+	System.out.println("Test Case ID: A6-MP-TT01"); 
+
+	AverageNumbers testNeg = new AverageNumbers(); 
+
+	 
+
+	testNeg.addTotal(-13); 
+
+	testNeg.addTotal(-91); 
+
+	testNeg.addTotal(-54); 
+
+	System.out.println("The total is: " + testNeg.getTotal()); 
+
+	 
+
+	 
+
+} 
+
+@Test 
+
+/* 
+
+* Test Case ID: A6-MP-TT02 
+
+* To verify if processList() works properly with an empty list 
+
+*/ 
+
+void testProcess() { 
+
+	AverageNumbers testProcess = new AverageNumbers(); 
+
+	int[] numbers = new int[]{}; 
+
+	testProcess.processList(numbers); 
+
+	System.out.println("The total is: " + testProcess.getTotal()); 
+
+	System.out.println("The average is: " + testProcess.getAverage()); 
+
+	 
+
+} 
 }
