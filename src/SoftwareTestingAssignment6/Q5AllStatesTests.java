@@ -80,5 +80,81 @@ public class Q5AllStatesTests {
     	System.out.println("The average is: " + divideByZeroTest.getTotal());
     	    	
     	assertEquals(0.0, divideByZeroTest.getAverage(), "A6-MS-SA01 - Average should be 0.0");    	
-    }    
+    }
+
+    @Test 
+
+/* 
+
+* Test Case ID: A6-MP-ST01 
+
+* Test if addTotal() correctly adds a number to the total 
+
+*/ 
+
+void testAddTotal() { 
+
+	System.out.println("Test Case ID: A6-MP-ST01"); 
+
+	AverageNumbers testTotal = new AverageNumbers(); 
+
+//add numbers	 
+
+	testTotal.addTotal(5); 
+
+	testTotal.addTotal(5); 
+
+	testTotal.addTotal(5); 
+
+	testTotal.addTotal(5); 
+
+//output average and total 
+
+	testTotal.setAverage(); 
+
+	System.out.println("The total is: " + testTotal.getTotal()); 
+
+	System.out.println("The average is: " + testTotal.getAverage()); 
+
+	 
+
+	 
+
+	 
+
+} 
+
+@Test 
+
+/* 
+
+* Test Case ID: A6-MP-ST02 
+
+* To verify if setAverage() correctly handles the calculation of the average 
+
+*/ 
+
+void testSetAverage() { 
+
+	System.out.println("Test Case ID: A6-MP-ST02"); 
+
+	AverageNumbers testAverage = new AverageNumbers(); 
+
+	testAverage.addTotal(19); 
+
+	testAverage.addTotal(63); 
+
+	testAverage.addTotal(47); 
+
+	testAverage.addTotal(94); 
+
+	 
+
+	testAverage.setAverage(); 
+
+	System.out.println("The total is: " + testAverage.getTotal()); 
+
+	System.out.println("The average is: " + testAverage.getAverage()); 
+
+} 
 }
